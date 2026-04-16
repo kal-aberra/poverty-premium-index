@@ -1,0 +1,116 @@
+POVERTY PREMIUM INDEX — REGRESSION RESULTS
+Dallas-Fort Worth Census Tracts (n = 1482)
+======================================================================
+
+======================================================================
+MODEL 1: PPI ~ Median Household Income (Bivariate)
+======================================================================
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     poverty_premium_index   R-squared:                       0.008
+Model:                               OLS   Adj. R-squared:                  0.007
+Method:                    Least Squares   F-statistic:                     11.62
+Date:                   Wed, 15 Apr 2026   Prob (F-statistic):           0.000670
+Time:                           20:30:59   Log-Likelihood:                -1357.6
+No. Observations:                   1482   AIC:                             2719.
+Df Residuals:                       1480   BIC:                             2730.
+Df Model:                              1                                         
+Covariance Type:               nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                       0.1134      0.037      3.082      0.002       0.041       0.186
+median_household_income -1.257e-06   3.69e-07     -3.409      0.001   -1.98e-06   -5.34e-07
+==============================================================================
+Omnibus:                      194.642   Durbin-Watson:                   1.337
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              295.252
+Skew:                           0.922   Prob(JB):                     7.71e-65
+Kurtosis:                       4.176   Cond. No.                     2.34e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 2.34e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+======================================================================
+MODEL 2: PPI ~ Income + Race + County (Full Model)
+======================================================================
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     poverty_premium_index   R-squared:                       0.096
+Model:                               OLS   Adj. R-squared:                  0.092
+Method:                    Least Squares   F-statistic:                     22.34
+Date:                   Wed, 15 Apr 2026   Prob (F-statistic):           6.99e-29
+Time:                           20:30:59   Log-Likelihood:                -1288.7
+No. Observations:                   1482   AIC:                             2593.
+Df Residuals:                       1474   BIC:                             2636.
+Df Model:                              7                                         
+Covariance Type:               nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                      -0.4859      0.082     -5.892      0.000      -0.648      -0.324
+median_household_income  1.983e-06   5.02e-07      3.953      0.000    9.99e-07    2.97e-06
+pct_black                   0.0110      0.001     10.464      0.000       0.009       0.013
+pct_hispanic                0.0093      0.001      6.612      0.000       0.007       0.012
+poverty_rate                0.0038      0.002      1.782      0.075      -0.000       0.008
+county_Dallas County       -0.1486      0.049     -3.018      0.003      -0.245      -0.052
+county_Denton County        0.0163      0.057      0.284      0.776      -0.096       0.129
+county_Tarrant County      -0.0406      0.050     -0.810      0.418      -0.139       0.058
+==============================================================================
+Omnibus:                      211.030   Durbin-Watson:                   1.434
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              346.948
+Skew:                           0.942   Prob(JB):                     4.58e-76
+Kurtosis:                       4.439   Cond. No.                     6.42e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 6.42e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+======================================================================
+MODEL 3: KEY TEST — Race Effect After Controlling for Income
+======================================================================
+
+Question: Does racial composition predict the poverty premium
+even after accounting for household income?
+
+                              OLS Regression Results                             
+=================================================================================
+Dep. Variable:     poverty_premium_index   R-squared:                       0.056
+Model:                               OLS   Adj. R-squared:                  0.055
+Method:                    Least Squares   F-statistic:                     44.05
+Date:                   Wed, 15 Apr 2026   Prob (F-statistic):           2.62e-19
+Time:                           20:30:59   Log-Likelihood:                -1320.6
+No. Observations:                   1482   AIC:                             2647.
+Df Residuals:                       1479   BIC:                             2663.
+Df Model:                              2                                         
+Covariance Type:               nonrobust                                         
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+const                      -0.1500      0.047     -3.195      0.001      -0.242      -0.058
+median_household_income  4.505e-08    3.9e-07      0.116      0.908   -7.19e-07    8.09e-07
+pct_black                   0.0084      0.001      8.711      0.000       0.007       0.010
+==============================================================================
+Omnibus:                      185.117   Durbin-Watson:                   1.405
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              284.667
+Skew:                           0.874   Prob(JB):                     1.53e-62
+Kurtosis:                       4.247   Cond. No.                     3.05e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.05e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+──────────────────────────────────────────────────────────────────────
+INTERPRETATION:
+  YES — % Black IS significant after controlling for income
+    Coefficient: 0.0084
+    p-value: 0.0000
+    A 10pp increase in % Black is associated with a
+    +0.084 change in PPI at the same income level.
+  This suggests structural barriers BEYOND income alone.

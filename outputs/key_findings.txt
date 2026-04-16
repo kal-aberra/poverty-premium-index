@@ -1,0 +1,28 @@
+KEY FINDINGS — POVERTY PREMIUM INDEX
+Dallas-Fort Worth Census Tracts
+======================================================================
+
+SCOPE
+   Analyzed 1482 Census tracts across 4 DFW counties
+   Data sources: USDA Food Access Atlas, Census ACS DP03 + DP05
+
+HEADLINE FINDING #1: Income -> Poverty Premium
+   Lowest-income tracts have an avg PPI of +0.108
+   Highest-income tracts have an avg PPI of -0.038
+   Gap: 0.146 standard deviations of structural cost burden
+
+HEADLINE FINDING #2: Race -> Poverty Premium
+   Tracts with majority Black population (n=95): PPI = +0.367
+   Tracts with <10% Black population (n=652): PPI = -0.116
+   Gap: 0.483 standard deviations
+
+HEADLINE FINDING #3: Food Deserts
+   112 tracts (7.6%) classified as food deserts
+   Median income in food deserts: $51,569
+   Median income elsewhere: $83,462
+   Income gap: $31,894
+
+
+======================================================================
+Note: For the regression-controlled finding on race vs. income,
+see outputs/regression_results.txt (Model 3).
