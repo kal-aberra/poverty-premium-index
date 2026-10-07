@@ -17,8 +17,7 @@ Each component is z-scored and averaged into a single composite index. Higher PP
 higher hidden cost of poverty.
 
 The analysis then tests whether this premium disproportionately affects communities of
-color, even after controlling for income — addressing the question of whether structural
-costs represent a form of inequality beyond poverty itself.
+color, even after controlling for income.
 
 Data Sources
 
@@ -27,7 +26,3 @@ Data Sources
 | Food Access Research Atlas | USDA ERS | 2019 | ers.usda.gov |
 | ACS 5-Year Estimates DP03 | Census Bureau | 2022 | data.census.gov |
 | ACS 5-Year Estimates DP05 | Census Bureau | 2022 | data.census.gov |
-
-Author
-Kalu Aberra — Independent research motivated by personal experience as a low-income
-student in the Dallas-Fort Worth area.
